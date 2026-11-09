@@ -1,0 +1,28 @@
+# Track CLAUDE.md, .gitignore and the whole WordPress folder (xampp/htdocs/):
+# core, themes, plugins and uploads. Keep out the XAMPP programs, live database
+# files, logs, secrets and downloads.
+# Git cannot re-include a file whose parent folder is ignored, so xampp/ is
+# ignored with /* and only htdocs/ is re-included with !.
+
+# --- XAMPP: ignore everything except the WordPress folder ---
+/xampp/*
+!/xampp/htdocs/
+
+# --- Never commit: secrets ---
+wp-config.php
+
+# --- WordPress temporary files (rewritten by updates, logging and caching) ---
+/xampp/htdocs/wp-content/upgrade/
+/xampp/htdocs/wp-content/upgrade-temp-backup/
+/xampp/htdocs/wp-content/cache/
+/xampp/htdocs/wp-content/debug.log
+
+# --- Downloads ---
+*.zip
+
+# --- OS / editor clutter ---
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
